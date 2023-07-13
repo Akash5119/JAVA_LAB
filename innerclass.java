@@ -1,53 +1,46 @@
 import java.util.Scanner;
-class Student
-{
-int roll_no,mark;
-String name;
-void get()
-{
-Scanner input=new Scanner(System.in);
-System.out.println("enter the name:");
-name=input.next();
-System.out.println("enter the rollno");
-roll_no=input.nextInt();
-System.out.println("enter the mark");
-mark=input.nextInt();
+class Student{
+     String Name;
+     int RNo;
+     int Mark;
+     Student(String Name,int RNo,int Mark){
+          this.Name=Name;
+          this.RNo=RNo;
+          this.Mark=Mark;
+     }
+     class Sports{
+          String SName;
+          int A_Point;
+          Sports(String SName,int A_Point){
+               this.SName=SName;
+               this.A_Point=A_Point;
+          }
+          void Display(){
+               System.out.println("___________________________");
+               System.out.println("Name:"+Name);
+               System.out.println("Roll Number:"+RNo);
+               System.out.println("Marks:"+Mark);
+               System.out.println("Sports Name:"+SName);
+               System.out.println("Activity Point:"+A_Point);
+               System.out.println("__________________________");
+          }
+     }
 }
-
-class Sports
-{
-String sprts_name;
-int actvty_point;
-void get()
-{
-Scanner input=new Scanner(System.in);
-System.out.println("enter the sports name");
-sprts_name=input.next();
-System.out.println("enter the activity point");
-actvty_point=input.nextInt();
-}
-void display()
-{
-System.out.println("...................");
-System.out.println("student name:"+name);
-System.out.println("student rollno:"+roll_no);
-System.out.println("student mark:"+mark);
-System.out.println("student name:"+sprts_name);
-System.out.println("student rollno:"+actvty_point);
-System.out.println("..................");
-
-
-}
-}
-}
-class Main
-{
-public static void main(String [] args)
-{
-Student obj=new Student();
-Student.Sports obj2= obj.new Sports();
-obj.get();
-obj2.get();
-obj2.display();
-}
+class InnerMain1{
+     public static void main(String args[]){
+          Scanner sc=new Scanner(System.in);
+          System.out.println("Enter your Name:");
+          String n=sc.nextLine();
+          System.out.println("Enter Roll Number:");
+          int r=sc.nextInt();
+          System.out.println("Enter Marks:");
+          int m=sc.nextInt();
+          System.out.println("Enter Sports Name:");
+          String sn=sc.next();
+          System.out.println("Enter Activity Point:");
+          int sm=sc.nextInt();
+          Student s=new Student(n,r,m);
+          Student.Sports s1=s.new Sports(sn,sm);
+          s1.Display();
+     }
 }
